@@ -1,6 +1,11 @@
 {
   "dependencies": {
+    "@vercel/node": "^3.0.0",
     "pg": "^8.12.0",
     "drizzle-orm": "^0.39.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   }
 }
