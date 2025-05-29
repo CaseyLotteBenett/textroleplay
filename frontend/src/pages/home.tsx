@@ -13,8 +13,7 @@ import {
   Zap, 
   History, 
   Users, 
-  Circle,
-  DoorOpen
+  Circle
 } from "lucide-react";
 
 interface OnlineCharacter {
@@ -54,11 +53,11 @@ export default function Home() {
   const characterAge = primaryCharacter ? 
     new Date().getFullYear() - new Date(primaryCharacter.birthDate).getFullYear() : 0;
 
-  const chatRooms = [
-    { name: "Hlavní chat", onlineCount: 3 },
-    { name: "Taverna U Zlatého draka", onlineCount: 1 },
-    { name: "Kouzelná knihovna", onlineCount: 1 },
-  ];
+  // const chatRooms = [
+  //   { name: "Hlavní chat", onlineCount: 3 },
+  //   { name: "Taverna U Zlatého draka", onlineCount: 1 },
+  //   { name: "Kouzelná knihovna", onlineCount: 1 },
+  // ];
 
   const recentActivity = [
     { text: `Vstoupili jste do Hlavního chatu`, time: "před 2 hodinami", type: "success" },
