@@ -74,8 +74,8 @@ export default function CharacterEdit() {
     updateCharacterMutation.mutate(data);
   };
 
-  const characterAge = primaryCharacter ? 
-    new Date().getFullYear() - new Date(primaryCharacter.birthDate).getFullYear() : 0;
+  // const characterAge = primaryCharacter ? 
+  //   new Date().getFullYear() - new Date(primaryCharacter.birthDate).getFullYear() : 0;
 
   return (
     <div className="min-h-screen bg-background dark">
@@ -126,7 +126,7 @@ export default function CharacterEdit() {
                 </h3>
                 <p className="text-muted-foreground text-sm mb-3">
                   {form.watch("birthDate") ? 
-                    `${new Date().getFullYear() - new Date(form.watch("birthDate")).getFullYear()} let` : 
+                    `${new Date().getFullYear() - new Date(form.watch("birthDate") || "2000-01-01").getFullYear()} let` : 
                     "Věk nezadán"
                   }
                 </p>
