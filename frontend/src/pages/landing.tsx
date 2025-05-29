@@ -11,7 +11,7 @@ import { Crown, LogIn } from "lucide-react";
 export default function Landing() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { login, isLoginPending, loginError } = useAuth();
+  const { login, isLoginPending } = useAuth();
   const { toast } = useToast();
 
   const handleLogin = async (e: React.FormEvent) => {
