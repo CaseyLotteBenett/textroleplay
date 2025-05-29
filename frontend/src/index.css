@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 262 83% 58%; /* #7C3AED */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 43 96% 56%; /* #F59E0B */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  
+  /* RPG Theme Colors */
+  --rpg-primary: 262 83% 58%; /* #7C3AED */
+  --rpg-secondary: 271 91% 65%; /* #A855F7 */
+  --rpg-accent: 43 96% 56%; /* #F59E0B */
+  --rpg-success: 158 64% 52%; /* #10B981 */
+  --rpg-dark: 217 33% 17%; /* #111827 */
+  --rpg-medium: 217 19% 27%; /* #1F2937 */
+  --rpg-gray: 215 25% 27%; /* #374151 */
+}
+
+.dark {
+  --background: 217 33% 17%; /* #111827 */
+  --foreground: 0 0% 98%;
+  --muted: 217 19% 27%; /* #1F2937 */
+  --muted-foreground: 215 20.2% 65.1%;
+  --popover: 217 33% 17%; /* #111827 */
+  --popover-foreground: 0 0% 98%;
+  --card: 217 19% 27%; /* #1F2937 */
+  --card-foreground: 0 0% 98%;
+  --border: 215 25% 27%; /* #374151 */
+  --input: 215 25% 27%; /* #374151 */
+  --primary: 262 83% 58%; /* #7C3AED */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 217 19% 27%; /* #1F2937 */
+  --secondary-foreground: 0 0% 98%;
+  --accent: 43 96% 56%; /* #F59E0B */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 262 83% 58%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@layer components {
+  .rpg-bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237C3AED' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .rpg-gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--rpg-dark)), hsl(var(--rpg-medium)), hsl(var(--rpg-dark)));
+  }
+
+  .rpg-card {
+    @apply bg-card/80 backdrop-blur-sm rounded-2xl border border-primary/20 shadow-2xl;
+  }
+
+  .rpg-input {
+    @apply w-full px-4 py-3 border border-input bg-background/50 placeholder:text-muted-foreground text-foreground rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+  }
+
+  .rpg-button-primary {
+    @apply w-full flex justify-center items-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg;
+    @apply text-primary-foreground bg-gradient-to-r from-primary to-secondary;
+    @apply hover:from-secondary hover:to-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+    @apply transition-all duration-200 transform hover:scale-105;
+  }
+
+  .rpg-button-secondary {
+    @apply py-3 px-4 border border-border text-foreground rounded-lg;
+    @apply hover:bg-muted transition-all duration-200;
+  }
+
+  .fantasy-font {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap');
