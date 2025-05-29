@@ -20,10 +20,10 @@ import { z } from "zod";
 import { useLocation } from "wouter";
 
 const characterEditSchema = z.object({
-  firstName: true,
-  middleName: true,
-  lastName: true,
-  birthDate: true,
+  firstName: z.string().min(1, "Křestní jméno je povinné"),
+  middleName: z.string().optional(),
+  lastName: z.string().min(1, "Příjmení je povinné"),
+  birthDate: z.string().optional(),
 });
 
 type CharacterEditForm = z.infer<typeof characterEditSchema>;
