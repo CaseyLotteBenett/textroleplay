@@ -37,7 +37,7 @@ DATABASE_URL=your-supabase-connection-string
 PORT=8080
 ```
 
-## Deployment
+## Deployment 
 
 1. Frontend: Deploy to Vercel
 2. Backend: Deploy to Fly.io
