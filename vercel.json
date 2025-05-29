@@ -1,8 +1,8 @@
 {
   "buildCommand": "vite build",
-  "outputDirectory": "dist",
+  "outputDirectory": "dist/public",
   "installCommand": "npm install",
-  "framework": "vite",
+  "framework": null,
   "env": {
     "VITE_API_URL": "https://a97dd40b-1cde-4de4-a47d-73d5912bd5d8-00-12mbkouhj5b1k.kirk.replit.dev"
   },
