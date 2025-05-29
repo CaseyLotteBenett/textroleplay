@@ -15,11 +15,11 @@ import {
   Calendar,
   UserCircle
 } from "lucide-react";
-import { insertCharacterSchema } from "../../../shared/schema";
+// import { insertCharacterSchema } from "../../../shared/schema";
 import { z } from "zod";
 import { useLocation } from "wouter";
 
-const characterEditSchema = insertCharacterSchema.pick({
+const characterEditSchema = z.object({
   firstName: true,
   middleName: true,
   lastName: true,
