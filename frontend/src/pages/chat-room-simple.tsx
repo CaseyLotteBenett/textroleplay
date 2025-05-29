@@ -91,7 +91,7 @@ export default function ChatRoom() {
   useEffect(() => {
     if (!currentRoomId || !currentCharacter) return;
 
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    const apiUrl = (import.meta as any).env.VITE_API_URL || 'http://localhost:5000';
     const wsUrl = apiUrl.replace('http', 'ws').replace('https', 'wss') + '/ws';
     const websocket = new WebSocket(wsUrl);
 
