@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
-import { MessageCircle, Send, Download, Archive, ArrowLeft, User } from "lucide-react";
+import { MessageCircle, Send, Download, Archive, ArrowLeft } from "lucide-react";
 import { format } from "date-fns";
 
 interface ChatRoom {
