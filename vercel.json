@@ -1,20 +1,12 @@
 {
-  "version": 2,
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist",
-  "functions": {
-    "api/health.js": {
-      "runtime": "nodejs18.x"
-    }
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "env": {
+    "VITE_API_URL": "https://a97dd40b-1cde-4de4-a47d-73d5912bd5d8-00-12mbkouhj5b1k.kirk.replit.dev"
   },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/dist/$1"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
